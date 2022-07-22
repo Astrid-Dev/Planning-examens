@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TP ICT318</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/pages/home.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="content-wrapper">
+        	<div></div>
+            <div id="main-content" style="width: 900px;" class="main-content wizard clearfix" novalidate="novalidate" role="application">
+			    <div class="steps clearfix">
+			        <div class="header">
+			        	<div class="image-content">
+		            		<img src="images/body-bg.jpg"/>
+		            	</div>
+		            	<h3>Accueil</h3>
+		            	<i title="Se déconnecter" class="signout fa fa-sign-out fa-2x"></i>
+			        </div>
+			    </div>
+			    <div class="content clearfix">
+			        <fieldset id="main-content-p-0" role="tabpanel" aria-labelledby="main-content-h-0" class="body current" aria-hidden="false">
+			            <div class="fieldset-content" align="center">
+			            
+					        <h5 class="title">
+					            Mes sessions
+					        </h5>
+				            <div class="mt-3 table-responsive">
+			                  <table class="table table-hover table-bordered mb-0">
+			                  	<thead>
+			                  		<tr>
+			                  			<th>N°</th>
+			                  			<th>Titre</th>
+			                  			<th>Date de création</th>
+			                  			<th>Charger</th>
+			                  			<th>Supprimer</th>
+			                  		</tr>
+			                  	</thead>
+			                  	<tbody id="sessions">
+			                  		
+			                  	</tbody>
+			                  </table>
+			                </div>
+			                
+			                <!-- Modal -->
+							<div class="modal fade" id="newSession" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog modal-dialog-centered" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="planningCeilTitle">Nouvelle session</h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <div class="modal-body">
+							        <div class="form-group">
+						                <label for="session-itle" class="form-label">Titre</label>
+						                <input type="text" id="session-title" class="form-control"/>
+						            </div>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+							        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="createSession()">Créer</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+				        </div>
+				        
+			                <div class="float-icon" data-toggle='modal' data-target="#newSession" title="Nouvelle session">
+			                	<i class="fa fa-plus"></i>
+			                </div>
+			        </fieldset>
+			       
+			    </div>
+			</div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="vendor/minimalist-picker/dobpicker.js"></script>
+    <script src="vendor/jquery.pwstrength/jquery.pwstrength.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pages/home.js"></script>
+    <script th:inline="javascript">
+	    let sessionUser = /*[[${user}]]*/ [];
+	   
+	    let userSessions = /*[[${sessions}]]*/ [];
+	    console.log(userSessions);
+	    setSessions(userSessions);
+	    setUser(sessionUser);
+    </script>
+    
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

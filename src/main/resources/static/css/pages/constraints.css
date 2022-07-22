@@ -1,0 +1,15 @@
+.week-selection{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.clickable:hover{
+	cursor: pointer;
+	border: 2px dashed;
+}
+
+.date-description{
+	color: gray;
+	font-size: small;
+}

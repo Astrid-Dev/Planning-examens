@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TP ICT318</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/pages/planning.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+	
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="content-wrapper">
+        <!--<div id="main-content"></div>-->
+            <h2 data-th-text="${session.session.title}">Planning</h2>
+            <div id="main-content" class="main-content wizard clearfix" novalidate="novalidate" role="application">
+			    <div class="steps clearfix">
+			        <ul role="tablist">
+			            <li role="tab" class="first done" aria-disabled="true">
+			                <a id="main-content-t-0" href="/jours" aria-controls="main-content-p-0">
+			                    <div class="title">
+			                        <span class="number">1</span>
+			                        Jours d'examens
+			                    </div>
+			                </a>
+			            </li>
+			            <li role="tab" class="done" aria-disabled="true">
+			                <a id="main-content-t-0" href="/horaires" aria-controls="main-content-p-0">
+			                    <div class="title">
+			                        <span class="number">2</span>
+			                        Plages horaires
+			                    </div>
+			                </a>
+			            </li>
+			            <li role="tab" class="done" aria-disabled="true">
+			                <a id="main-content-t-2" href="/salles" aria-controls="main-content-p-2">
+			                    <div class="title">
+			                        <span class="number">3</span>
+			                        Salles
+			                    </div>
+			                </a>
+			            </li>
+			            <li role="tab" class="done" aria-disabled="true">
+			                <a id="main-content-t-3" href="/examens" aria-controls="main-content-p-3">
+			                    <div class="title">
+			                        <span class="number">4</span>
+			                        Examens
+			                    </div>
+			                </a>
+			            </li>
+			            <li role="tab" class="done" aria-disabled="true">
+			                <a id="main-content-t-4" href="/contraintes" aria-controls="main-content-p-4">
+			                    <div class="title">
+			                        <span class="number">5</span>
+			                        Contraintes
+			                    </div>
+			                </a>
+			            </li>
+			            <li role="tab" class="current last" aria-disabled="true">
+			                <a id="main-content-t-5" href="/planning" aria-controls="main-content-p-5">
+			                    <div class="title">
+			                        <span class="number">6</span>
+			                        Planning Final
+			                    </div>
+			                </a>
+			            </li>
+			        </ul>
+			    </div>
+			    <div class="content clearfix">
+			        <h3 id="main-content-h-0" tabindex="-1" class="title">
+			            Jours d'examens
+			        </h3>
+			        <fieldset id="main-content-p-0" role="tabpanel" aria-labelledby="main-content-h-0" class="body" style="display: none;" aria-hidden="true">
+			            
+			        </fieldset>
+			        
+			        
+			        <h3 id="main-content-h-1" tabindex="-1" class="title current">
+			            Plages horaires
+			        </h3>
+			        <fieldset id="main-content-p-1" role="tabpanel" aria-labelledby="main-content-h-1" class="body" aria-hidden="true" style="display: none;"></fieldset>
+			        
+			        
+			        <h3 id="main-content-h-2" tabindex="-1" class="title">
+			            Salles
+			        </h3>
+			        <fieldset id="main-content-p-2" role="tabpanel" aria-labelledby="main-content-h-2" class="body" aria-hidden="true" style="display: none;"></fieldset>
+			        
+			        <h3 id="main-content-h-3" tabindex="-1" class="title">
+			            Examens
+			        </h3>
+			        <fieldset id="main-content-p-3" role="tabpanel" aria-labelledby="main-content-h-3" class="body" aria-hidden="true" style="display: none;"></fieldset>
+			        
+			        <h3 id="main-content-h-4" tabindex="-1" class="title">
+			            Contraintes
+			        </h3>
+			        <fieldset id="main-content-p-4" role="tabpanel" aria-labelledby="main-content-h-4" class="body" aria-hidden="true" style="display: none;"></fieldset>
+			        <h3 id="main-content-h-5" tabindex="-1" class="title">
+			            Planning Final
+			        </h3>
+			        <fieldset id="main-content-p-5" role="tabpanel" aria-labelledby="main-content-h-5" class="body current" aria-hidden="false">
+			        	<div class="fieldset-content" align="center">
+				        	<div id="planning">
+				        		<div class="top-content">
+					        		<h4 id="planning-title">Planning des examens</h3>
+					        		<div class="infos mt-2">
+					        			<div><span class="rubric">Session: </span><span id="session">Du 20 Juin au 28 Juin 2022</span></div>
+					        			<div><span class="rubric">Effectif total :</span> <span id="total">150</span></div>
+					        		</div>
+					        	</div>
+					             <div class="col-md-10 mt-3 table-responsive">
+				                  <table class="table table-hover table-bordered mb-0">
+				                  	<thead>
+				                  		<tr>
+				                  			<th>N°</th>
+				                  			<th>Date</th>
+				                  			<th>Horaire</th>
+				                  			<th>Enseignant</th>
+				                  			<th>Code UEs</th>
+				                  			<th>Salle</th>
+				                  		</tr>
+				                  	</thead>
+				                  	<tbody id="planning-result">
+				                  		
+				                  	</tbody>
+				                  </table>
+				                </div>
+				        	</div>
+				        	<button class="btn btn-danger mt-2" onclick="getPDF()"><i class="fa fa-file-pdf-o"></i> Exporter</button>
+				        </div>
+				        <div class="fieldset-footer">
+				            <span>Etape 6 sur 6</span>
+				        </div>
+			        </fieldset>
+			       
+			    </div>
+			    <div class="actions clearfix">
+			        <ul role="menu" aria-label="Pagination">
+			            <li aria-disabled="false" aria-hidden="false"><a href="/contraintes" role="menuitem">Précédent</a></li>
+			            <li aria-hidden="false" aria-disabled="false"><a  href="/home" role="menuitem">Terminer</a></li>
+			            <li aria-hidden="true" style="display: none;"><a href="#finish" role="menuitem">Submit</a></li>
+			        </ul>
+			    </div>
+			</div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="vendor/minimalist-picker/dobpicker.js"></script>
+    <script src="vendor/jquery.pwstrength/jquery.pwstrength.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pages/planning.js"></script>
+    <script th:inline="javascript">
+	    let sessionTimes = /*[[${times}]]*/ [];
+	    let sessionDays = /*[[${days}]]*/ [];
+	    let sessionRooms = /*[[${rooms}]]*/ [];
+	    let sessionExams = /*[[${exams}]]*/ [];
+	    let sessionPlanning = /*[[${planning}]]*/ [];
+	    setDays(sessionDays);
+	    setTimes(sessionTimes);
+	    setRooms(sessionRooms);
+	    setExams(sessionExams);
+	    setPlanning(sessionPlanning);
+	    showPlanning();
+    </script>
+    
+    <script>
+    function getPDF () {
+        return html2canvas($('#planning'), {
+            background: "#ffffff",
+            onrendered: function(canvas) {
+            	const contentDataURL = canvas.toDataURL('image/png')
+                // Adjust width and height
+                var imgWidth =  (canvas.width * 60) / 240;
+                var imgHeight = (canvas.height * 70) / 240;
+                // jspdf changes
+                var pdf = new jsPDF('l', 'mm', 'a4');
+                let width = pdf.internal.pageSize.getWidth();
+                let height = canvas.height * width / canvas.width;
+                pdf.addImage(contentDataURL, 'PNG', 0, 5, width, height);
+                pdf.save(`Budgeting ${$('.pdf-title').text()}.pdf`);
+            }
+        });
+    }
+    </script>
+    
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
