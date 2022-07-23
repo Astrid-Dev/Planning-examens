@@ -1,0 +1,40 @@
+.image-content{
+	width: 40px;
+	height: 40px;
+}
+
+.image-content img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.signout:hover{
+	color: #1abc9c;
+	cursor: pointer;
+}
+
+.fieldset-content{
+	position: relative;
+}
+
+.float-icon{
+	width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1abc9c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    cursor: pointer;
+}

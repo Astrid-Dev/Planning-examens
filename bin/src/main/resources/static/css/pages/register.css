@@ -1,0 +1,18 @@
+.image-content{
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+
+.image-content img{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+
+.image-content i{
+	position: absolute;
+    bottom: 60px;
+    right: 30px;
+    cursor: pointer;
+}

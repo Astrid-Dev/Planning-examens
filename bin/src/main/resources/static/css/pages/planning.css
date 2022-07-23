@@ -1,0 +1,14 @@
+.rubric{
+	font-weight: bold;
+	font-style: italic;
+}
+
+.infos{
+	display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+#planning-title{
+	text-transform: uppercase;
+}

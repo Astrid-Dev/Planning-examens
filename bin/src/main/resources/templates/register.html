@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TP ICT318</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/pages/register.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="content-wrapper">
+        	<div></div>
+            <div id="main-content" class="main-content wizard clearfix" novalidate="novalidate" role="application">
+			    <div class="steps clearfix">
+			        <ul role="tablist">
+			            <li role="tab" class="first done current" aria-disabled="false" aria-selected="true">
+			                <a id="main-content-t-0" href="#" aria-controls="main-content-p-0">
+			                    <span class="current-info audible"> </span>
+			                    <div class="title">
+			                        <span class="number"><i class="fa fa-user-plus"></i></span>
+			                        Créer un compte
+			                    </div>
+			                </a>
+			            </li>
+			            <li role="tab" class="last disabled" aria-disabled="true">
+			                <a id="main-content-t-1" href="/login" aria-controls="main-content-p-1">
+			                    <div class="title">
+			                        <span class="number"><i class="fa fa-sign-in"></i></span>
+			                        Se connecter
+			                    </div>
+			                </a>
+			            </li>
+			        </ul>
+			    </div>
+			    <div class="content clearfix">
+			        <h3 id="main-content-h-0" tabindex="-1" class="title current">
+			            Créer un compte
+			        </h3>
+			        <fieldset id="main-content-p-0" role="tabpanel" aria-labelledby="main-content-h-0" class="body current" aria-hidden="false">
+			            <div class="fieldset-content" align="center">
+			            	<div class="image-content">
+			            		<img id="user-profile" src="images/body-bg.jpg"/>
+			            		<i id="button-icon" class="fa fa-2x fa-camera c-pointer"></i>
+			            		<input accept="image/*" id="file-input" type="file" hidden>
+			            	</div>
+				            <form name="register" onsubmit="return false;">
+				            	<div class="form-group">
+					                <label for="email" class="form-label">Email</label>
+					                <input type="email" name="email" id="email" placeholder="Votre adresse e-mail" required/>
+					            </div>
+					            <div class="form-group">
+					                <label for="password" class="form-label">Mot de passe</label>
+					                <input type="password" name="password" id="password" placeholder="Votre mot de passe" minlength="6" maxlength="20" required />
+					            </div>
+					            <button onclick="onSubmit()" type="submit" class="custom-button">S'enregister</button>
+				            </form>
+				        </div>
+			        </fieldset>
+			        <h3 id="main-content-h-1" tabindex="-1" class="title">
+			            Se connecter
+			        </h3>
+			        <fieldset id="main-content-p-1" role="tabpanel" aria-labelledby="main-content-h-1" class="body" aria-hidden="true" style="display: none;"></fieldset>
+			       
+			    </div>
+			</div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="vendor/minimalist-picker/dobpicker.js"></script>
+    <script src="vendor/jquery.pwstrength/jquery.pwstrength.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pages/register.js"></script>
+    <script>
+    	
+    </script>
+    
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
